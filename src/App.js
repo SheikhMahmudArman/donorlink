@@ -1,11 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Landing from './pages/Landing';     // ← this is the correct line
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";   // your landing page
+import Homepage from "./homepage";       // your homepage component
 
-
-//import Homepage from './pages/Homepage';
-
-
-const isLoggedIn = false; 
+const isLoggedIn = false; // change this later based on auth
 
 function App() {
   return (
@@ -13,11 +11,9 @@ function App() {
       <Routes>
         <Route
           path="/"
-          //element={isLoggedIn ? <Homepage /> : <Landing />}
-          element={isLoggedIn ? <Landing /> : <Landing />}
+          element={isLoggedIn ? <Homepage /> : <Landing />}
         />
-        
-        {/* Add more routes later */}
+        {/* You can add more routes here later */}
         {/* <Route path="/login" element={<Login />} /> */}
       </Routes>
     </BrowserRouter>
