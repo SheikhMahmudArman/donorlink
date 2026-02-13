@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "msedge",                  // ← changed from "chrome" to "msedge"
+      "request": "launch",
+      "name": "Launch Edge against localhost",
+      "url": "http://localhost:3000",    // ← change 8080 to 3000 if using create-react-app (npm start default)
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
