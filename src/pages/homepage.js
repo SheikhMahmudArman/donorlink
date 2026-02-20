@@ -1,59 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import "./homepage.css";
 
-const donorsList = [
-  { id: 1, name: "Fatima Rahman", bloodGroup: "A+", location: "Dhaka", lastDonation: "2 weeks ago", available: true },
-  { id: 2, name: "Rafiq Ahmed", bloodGroup: "O-", location: "Chittagong", lastDonation: "1 month ago", available: true },
-  { id: 3, name: "Nadia Hossain", bloodGroup: "B+", location: "Sylhet", lastDonation: "3 weeks ago", available: false },
-  { id: 4, name: "Kamal Uddin", bloodGroup: "AB+", location: "Rajshahi", lastDonation: "1 week ago", available: true },
-];
-
-const bloodGroups = ["All", "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
-
-export default function Homepage() {
-  const [selectedBloodGroup, setSelectedBloodGroup] = useState("All");
-
-  const filteredDonors =
-    selectedBloodGroup === "All"
-      ? donorsList
-      : donorsList.filter(d => d.bloodGroup === selectedBloodGroup);
-
-  const getInitials = (name) =>
-    name.split(" ").map(n => n[0]).join("");
-
+function Homepage() {
   return (
-    <>
+    <div className="page">
       <header className="header">
-        <h1>Donor Link</h1>
+        <div className="header-content">
+          <div className="blood-icon">🩸</div>
+          <h1>
+            Save <span>Lives</span>
+          </h1>
+          <p>Connect with verified blood donors instantly</p>
+        </div>
+
+        <div className="wave"></div>
       </header>
 
-      <main className="main-content">
+      <section className="main-content">
         <div className="filter">
-          <select
-            value={selectedBloodGroup}
-            onChange={(e) => setSelectedBloodGroup(e.target.value)}
-          >
-            {bloodGroups.map(bg => (
-              <option key={bg} value={bg}>{bg}</option>
-            ))}
+          <select>
+            <option>All Blood Groups</option>
+            <option>A+</option>
+            <option>B+</option>
+            <option>O+</option>
+            <option>AB+</option>
           </select>
         </div>
 
         <div className="donors-grid">
-          {filteredDonors.map(donor => (
-            <div key={donor.id} className="donor-card">
-              <div className="donor-initials">
-                {getInitials(donor.name)}
-              </div>
+          {[
+            { name: "Rahul Kumar", group: "O+", initials: "RK" },
+            { name: "Anita Sharma", group: "A+", initials: "AS" },
+            { name: "Mohit Jain", group: "B+", initials: "MJ" },
+          ].map((donor, index) => (
+            <div className="donor-card" key={index}>
+              <div className="status-dot"></div>
+              <div className="donor-initials">{donor.initials}</div>
               <h3>{donor.name}</h3>
-              <p><strong>Blood:</strong> {donor.bloodGroup}</p>
-              <p><strong>Location:</strong> {donor.location}</p>
-              <p><strong>Last Donation:</strong> {donor.lastDonation}</p>
-              <button className="contact-btn">Contact</button>
+              <p className="blood-group">{donor.group}</p>
+              <button className="contact-btn">
+                <span>📞</span> Contact
+              </button>
             </div>
           ))}
         </div>
-      </main>
-    </>
+      </section>
+    </div>
   );
 }
+
+export default Homepage;
