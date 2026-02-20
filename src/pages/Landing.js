@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Landing.css';
+import '../styles/Landing.css';
+import './Login.js';
+import './Register.js';
+
+
 
 const Landing = () => {
   return (
@@ -33,7 +37,7 @@ const Landing = () => {
               Register
             </Link>
             <Link to="/login" className="btn btn-outline">
-              Log In
+              Login
             </Link>
           </div>
         </div>
@@ -88,12 +92,12 @@ const Landing = () => {
       {/* Footer */}
       <footer className="footer">
         <p>© {new Date().getFullYear()} Donor Link. All rights reserved.</p>
-        <div className="footer-links">
-          <a href="#">About Us</a>
-          <a href="#">How It Works</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Contact</a>
-        </div>
+       <div className="footer-links">
+  <Link to="/about">About Us</Link>
+  <Link to="/how-it-works">How It Works</Link>
+  <Link to="/privacy-policy">Privacy Policy</Link>
+  <Link to="/contact">Contact</Link>
+</div>
       </footer>
     </div>
   );

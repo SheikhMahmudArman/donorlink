@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './homepage.css';
+import { useState } from "react";
+import '../styles/Homepage.css';
 
 const donorsList = [
   { id: 1, name: 'Fatima Rahman', bloodGroup: 'A+', location: 'Dhaka', lastDonation: '2 weeks ago', available: true },
@@ -14,7 +14,7 @@ const donorsList = [
 
 const bloodGroups = ['All', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
 
-export default function Homepage() {
+function Homepage() {
   const [selectedBloodGroup, setSelectedBloodGroup] = useState('All');
 
   const filteredDonors = selectedBloodGroup === 'All' ? donorsList : donorsList.filter(d => d.bloodGroup === selectedBloodGroup);
@@ -133,3 +133,5 @@ export default function Homepage() {
     </>
   );
 }
+
+export default Homepage;
