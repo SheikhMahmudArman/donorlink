@@ -1,22 +1,24 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Landing from "./pages/Landing";   // your landing page
-import Homepage from "./homepage";       // your homepage component
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
 
-const isLoggedIn = false; // change this later based on auth
+import Landing from "./pages/Landing";
+import Homepage from "./pages/homepage";
 
 function App() {
+  const isLoggedIn = false; // change later when adding auth
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={isLoggedIn ? <Homepage /> : <Landing />}
-        />
-        {/* You can add more routes here later */}
-        {/* <Route path="/login" element={<Login />} /> */}
-      </Routes>
-    </BrowserRouter>
+    <div className="app">
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={isLoggedIn ? <Homepage /> : <Landing />}
+          />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
