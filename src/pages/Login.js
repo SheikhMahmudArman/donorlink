@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import "../styles/Login.css";
+import "./Homepage.js";
 
 
 function Login() {
@@ -22,7 +23,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Login successful, navigate to homepage
-    navigate("/homepage");  // <-- homepage route
+    navigate("/Homepage");  // <-- homepage route
   };
 
   return (

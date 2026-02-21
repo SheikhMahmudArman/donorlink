@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Register from './pages/Register';       // your homepage component
-import Homepage from './pages/Homepage.js'; 
+import Homepage from './pages/Homepage'; 
 //const isLoggedIn = false; // change this later based on auth
 
 function App() {
