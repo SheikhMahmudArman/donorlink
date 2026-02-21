@@ -40,3 +40,28 @@
   color: #66a6ff;
   cursor: pointer;
 }
+
+
+
+@media (max-width: 768px) {
+  .login-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .login-card input,
+  .login-card button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .switch-link {
+    font-size: 14px;
+  }
+}

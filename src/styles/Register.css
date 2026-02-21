@@ -34,3 +34,25 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+
+
+@media (max-width: 768px) {
+  .register-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .register-card input,
+  .register-card select,
+  .register-card button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
