@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom';
 import "../styles/Login.css";
-import "./Homepage.js";
+
 
 
 function Login() {
@@ -48,7 +47,7 @@ function Login() {
         />
 
         <button type="submit">
-         <Link to="/login">Login</Link>
+         login
           </button>
 
         <p className="switch-link" onClick={() => navigate("/register")}>
